@@ -1,0 +1,265 @@
+/* --- VARIABLES DE MARCA --- */
+:root {
+    --bg-dark: #0d1117;          /* Fondo principal estilo GitHub Dark */
+    --card-bg: #161b22;          /* Fondo de tarjetas */
+    --neon-green: #00ff88;       /* Tu verde de marca */
+    --border-dim: #30363d;       /* Bordes sutiles */
+    --text-main: #e6edf3;        /* Texto casi blanco */
+    --text-dim: #8b949e;         /* Texto secundario */
+    --shadow-green: rgba(0, 255, 136, 0.15);
+}
+
+/* --- ESTRUCTURA GENERAL (CORREGIDO PARA EVITAR NEGRO TOTAL) --- */
+html, body {
+    background-color: var(--bg-dark) !important; /* Asegura que no haya saltos de color al scrollear */
+    margin: 0;
+    padding: 0;
+}
+
+.info-page-wrapper {
+    background-color: var(--bg-dark); /* Color requerido */
+    color: var(--text-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Forzar que cualquier sección que use bg-dark de Bootstrap use tu color de marca */
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+.text-green { color: var(--neon-green) !important; }
+.bg-green { background-color: var(--neon-green) !important; }
+
+/* --- SECCIÓN HERO --- */
+.info-hero {
+    padding: 120px 0 80px;
+    /* Gradiente sutil sobre el fondo requerido */
+    background: radial-gradient(circle at top right, rgba(0, 255, 136, 0.05) 0%, var(--bg-dark) 60%);
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+/* --- ESTADÍSTICAS --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-box {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-dim);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-green);
+}
+
+.stat-box h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+/* --- TARJETAS DE MISIÓN/VISIÓN --- */
+.feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-dim);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    background: rgba(0, 255, 136, 0.08);
+    color: var(--neon-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+/* --- PORTAFOLIO DINÁMICO (PHP) --- */
+.portfolio-item-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-dim);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.portfolio-item-card:hover {
+    border-color: var(--neon-green);
+    transform: scale(1.01);
+}
+
+.project-thumb {
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+/* Gradientes para el portafolio simulado */
+.p-fintech { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); border: 1px solid #3b82f6; }
+.p-ecommerce { background: linear-gradient(135deg, #064e3b, #065f46, #047857); border: 1px solid #10b981; }
+.p-health { background: linear-gradient(135deg, #450a0a, #7f1d1d, #991b1b); border: 1px solid #ef4444; }
+.p-logistics { background: linear-gradient(135deg, #3f2b96, #a8c0ff); border: 1px solid #6366f1; }
+
+.tech-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-dim);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.st-done { background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
+.st-wait { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+
+/* --- SECCIÓN CAPACIDADES (CAMBIADO PARA EVITAR NEGRO) --- */
+.specialization-section {
+    /* Eliminamos el negro puro (rgba 13, 17, 23 es el mismo que bg-dark, lo dejamos uniforme) */
+    background: var(--bg-dark); 
+    border-top: 1px solid var(--border-dim);
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.progress { 
+    background-color: var(--card-bg); /* Un poco más claro que el fondo para que se vea el surco */
+    border-radius: 10px;
+    height: 8px;
+}
+
+/* --- UTILIDADES --- */
+.mb-100 { margin-bottom: 100px; }
+.text-justify { text-align: justify; line-height: 1.8; }
+
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+
+/* --- ESTILOS DE PLANES --- */
+.plan-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-dim);
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-featured {
+    border-color: var(--neon-green);
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+    z-index: 2;
+}
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--neon-green);
+    color: black;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 5px 15px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* Botón estilo Cyber */
+.btn-cyber {
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+}
+
+.btn-cyber:hover {
+    background: var(--neon-green);
+    color: black;
+    box-shadow: 0 0 15px var(--neon-green);
+    transform: translateY(-2px);
+}
+
+.price-box .amount {
+    font-family: 'JetBrains Mono', monospace; /* Si la tienes, si no usa Courier New */
+}
+/* --- ESTILOS DE FORMULARIO CYBER --- */
+.form-control-cyber {
+    background: #0d1117 !important; /* Fondo igual al de la página */
+    border: 1px solid var(--border-dim) !important;
+    color: var(--text-main) !important;
+    padding: 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control-cyber:focus {
+    border-color: var(--neon-green) !important;
+    outline: none;
+    box-shadow: 0 0 10px var(--shadow-green);
+}
+
+/* Estilo para los labels tipo terminal */
+label {
+    display: block;
+    letter-spacing: 2px;
+}
+
+/* Ajuste para el select (flecha blanca) */
+select.form-control-cyber {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2300ff88' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    appearance: none;
+}

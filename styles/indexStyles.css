@@ -1,0 +1,77 @@
+/* --- VARIABLES --- */
+:root {
+    --bg-darker: #0d1117;
+    --card-dark: #161b22;
+    --neon-green: #00ff88;
+    --text-dim: #8b949e;
+}
+
+body {
+    background-color: var(--bg-darker);
+    color: white;
+}
+
+.text-green { color: var(--neon-green) !important; }
+
+/* --- HERO --- */
+.hero-dark {
+    background: radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+}
+
+.btn-green {
+    background-color: var(--neon-green);
+    color: #000;
+    border: none;
+}
+
+.btn-green:hover {
+    background-color: #00cc6d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+}
+
+.shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+/* --- CARDS --- */
+.bg-darker { background-color: var(--bg-darker); }
+
+.feature-card-dark {
+    background-color: var(--card-dark);
+    border: 1px solid #30363d;
+    transition: 0.3s;
+}
+
+.feature-card-dark:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--neon-green);
+}
+
+.btn-link-green {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- CAROUSEL --- */
+.bg-blur {
+    background: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--neon-green);
+}
+
+/* --- CTA FINAL --- */
+.cta-green-section {
+    background-color: var(--neon-green);
+}
+
+.img-fluid.shadow-green-lg {
+    filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.2));
+}
